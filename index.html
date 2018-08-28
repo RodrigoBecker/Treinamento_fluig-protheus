@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Fluig x Protheus</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background="img/fundo.jpg">
+				<h3 style="color:white">fluig & Protheus</h3>
+				<P style="color:white; font-size: 25px">Saiba como Integrar sua plataforma com o ERP </P>
+				<p style="font-size:30px; color: white">
+					<small>Desenvolvido por
+						<a href="http://academy.fluig.com" target="_blank">fluig Academy</a>
+					</small>
+				</p>
+			</section>
+
+			<section>
+				<img src="img/avatar_becker.png" style="border: 0px; background: none; box-shadow: none" />
+				<h3 class="author-name">Rodrigo Becker</h3>
+				<p style="font-size:18px">Full Stack Developer | <b>fluig Academy Expert </b>
+				</p>
+				<p style="font-size: 18px">
+					"Sou apaixonado por tecnologia e negócios e por isso estou aqui! Meu objetivo é ensiná-los como integrar a plataforma fluig
+					com o ERP Protheus afim de potencializar os recursos de sua plataforma. "
+				</p>
+				<div class="menu">
+					<ul style="display: inline-flex;list-style-type:none">
+						<li style="font-size:18px; margin-right: 50px">
+							<a href="mailto:rodrigo.more@totvs.com.br">
+								<img src="img/email.png" style="width: 50px; height: 50px; background: none; box-shadow: none;border: none">
+							</a>
+						</li>
+						<li style="font-size:18px; margin-right: 50px">
+							<a href="https://www.linkedin.com/in/rodrigo-becker/">
+								<img src="img/likedin.png" style="width: 50px; height: 50px; background: none; box-shadow: none;border: none">
+							</a>
+						</li>
+						<li style="font-size:18px; margin-right: 50px">
+							<a href="https://github.com/RodrigoBecker">
+								<img src="img/github.png" style="width: 50px; height: 50px; background: none; box-shadow: none;border: none">
+							</a>
+						</li>
+						<li style="font-size:18px;margin-right: 50px">
+							<a href="https://medium.com/@rodrigo_becker">
+								<img src="img/medium.png" style="width: 50px; height: 50px; background: none; box-shadow: none;border: none">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<h3> O que vamos falar ??</h3>
+				<p>=)</p>
+			</section>
+
+			<section>
+				<p style="font-size: 25px"># Porque devemos <b>INTEGRAR?</b></p>
+				<p class="fragment" style="font-size: 25px"># <b>NIVEIS</b> de integração</p>
+				<p class="fragment" style="font-size: 25px"># <b>ARQUITETURA</b> fluig & Protheus</p>
+				<p class="fragment" style="font-size: 25px"># Configurando <b>SERVIÇOS</b> do Protheus </p>
+				<p class="fragment" style="font-size: 25px"># Consumindo serviços <b>SOAP</b> e <b>REST FULL</b></p>
+				<p class="fragment" style="font-size: 25px"># Trabalhando com <b>DATASETS</b> </p>
+				<p class="fragment" style="font-size: 25px"># Construíndo <b>DATASETS DE INTEGRAÇÃO </b></p>
+				<p class="fragment" style="font-size: 25px"># Trabalhando com <b> CONSTRAINTS</b></p>
+				<p class="fragment" style="font-size: 25px"># Construíndo <b>CRUD</b> de integração</p>
+				<p class="fragment" style="font-size: 40px"><b>VAMOS LÁ...</b></p>
+
+			</section>
+
+			<section>
+				<section>
+					<h3>Por que devemos <span style="color:blueviolet">INTEGRAR</span>?</b></h3>
+				</section>
+
+				<section>
+					<ul>
+						<li style="font-size:26px"> Tecnologia e Négocios são <span style="font-size:40px; color:blueviolet">organismos vivos</span></li>
+						<li style="font-size:26px"><span style="font-size:40px; color:blueviolet">Evolução</span> constante</li>
+						<li style="font-size:26px"><span style="font-size:40px; color:blueviolet">Escalabilidade</span> de aplicações para
+							atender o negócio</li>
+						<li style="font-size:26px">Harmonizar <span style="font-size:40px; color:blueviolet">dados</span> que trafegam na organização</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>...Benefícios
+						<h3>
+				</section>
+
+				<section>
+					<ul>
+						<li style="font-size:26px">Fim das falhas de comunicação</li>
+						<li style="font-size:26px">Aumento da produtividade</li>
+						<li style="font-size:26px">Mais automatização</li>
+						<li style="font-size:26px">Gestão Inteligente</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Niveis de Integração</h3>
+				</section>
+				<section>
+					<ol>
+						<li style="font-size:26px"> Por <b>entrada munual</b> de dados</li>
+						<li style="font-size:26px"> Por <b>sistema intermediador</b></li>
+						<li style="font-size:26px"> Por <b>troca de arquivo</b> </li>
+						<li style="font-size:26px"> Por Compartilhamento de <b>base de dados</b></li>
+						<li style="font-size:26px"> Através de serviço <b>SOA</b></li>
+					</ol>
+				</section>
+
+				<section>
+						<img src="img/arquitetura.png" style="width: 700px; height: auto;border: 0px; background: none; box-shadow: none  " />
+				</section>
+
+				<section>
+				<h2>Configurando serviços do <span style="color:blueviolet">Protheus</span></h2>
+				</section>
+
+
+				<section>
+						<h4>Configurando <span style="color:blueviolet">SOA</span></h4>
+						<pre><code class="Apache hljs" data-trim contenteditable>
+
+								[environment]
+								SourcePath=C:\TOTVS 12\Microsiga\protheus\apo
+								RootPath=C:\TOTVS 12\Microsiga\protheus_Data
+								StartPath=\system\
+								x2_path=
+								RpoDb=SQL
+								RpoLanguage=Portuguese
+								RpoVersion=120
+								LocalFiles=CTREE
+								localdbextension=.dtc
+								TopMemoMega=1
+								THEME=Ocean
+								REGIONALLANGUAGE=BRA
+								TOPDATABASE=MSSQL
+								TOPSERVER=spon10113294
+								TOPALIAS=protheus_fluig
+								TOPPORT=7890
+								
+								
+								[Drivers]
+								Active=tcp_SOAP
+								
+								[tcp_SOAP]
+								TYPE=TCPIP
+								Port=1234
+								
+								
+								[Service]
+								Name=TOTVS-Appserver12
+								DisplayName=TOTVS | Appserver 12
+								
+								[GENTCPIP]
+								Enable=0
+								
+								[LICENSECLIENT]
+								SERVER=10.171.67.144
+								PORT=5555
+								
+								[WEBAPP]
+								PORT= 8099
+								
+								[TDS]
+								ALLOWEDIT=*
+								ALLOWAPPLYPATCH=* 
+								
+								
+								[ONSTART]
+								JOBS=JOB_WS_T1D_MG_01
+								
+								[HTTP]
+								ENABLE=1
+								PORT=8033
+								
+								[spon10113294:8033/ws]
+								ENABLE=1
+								PATH=C:\TOTVS 12\Microsiga\protheus_data\web\ws
+								ENVIRONMENT=ENVIRONMENT
+								INSTANCENAME=ws
+								RESPONSEJOB=JOB_WS_T1D_MG_01
+								DEFAULTPAGE=wsindex.apw
+								
+								[JOB_WS_T1D_MG_01]
+								TYPE=WEBEX
+								ENVIRONMENT=ENVIRONMENT
+								INSTANCES=1,10
+								SIGAWEB=WS
+								INSTANCENAME=ws
+								ONSTART=__WSSTART
+								ONCONNECT=__WSCONNECT
+								PREPAREIN=T1,D MG 01 
+								
+								[spon10113294:8033/pp]
+								ENABLE=1
+								PATH=C:\TOTVS 12\Microsiga\protheus_data\web\pp
+								ENVIRONMENT=ENVIRONMENT
+								INSTANCENAME=pp
+								RESPONSEJOB=JOB_PP
+								
+								[JOB_PP]
+								TYPE=WEBEX
+								ENVIRONMENT=ENVIRONMENT
+								INSTANCES=1,10
+								SIGAWEB=PP
+								INSTANCENAME=pp
+								ONSTART=STARTWEBEX
+								ONCONNECT=CONNECTWEBEX
+								ONEXIT=FINISHWEBEX
+								WEBSERVICELOCATION=http://spon10113294:8033/ws                                                                                 
+								
+								[GENERAL]
+								MaxQuerySize=15960
+							
+							</code></pre>
+
+							<p style="font-size:26px">appserver.ini</p>
+
+								
+				</section>
+
+				<section>
+						<h4>Configurando <span style="color:blueviolet">REST FULL</span></h4>
+						<pre><code class="Apache hljs" data-trim contenteditable>
+																
+								[environment]
+								SourcePath=C:\TOTVS 12\Microsiga\protheus\apo
+								RootPath=C:\TOTVS 12\Microsiga\protheus_data
+								StartPath=\system\
+								x2_path=
+								RpoDb=SQL
+								RpoLanguage=Portuguese
+								RpoVersion=120
+								LocalFiles=CTREE
+								localdbextension=.dtc
+								TopMemoMega=1
+								THEME=Ocean
+								REGIONALLANGUAGE=BRA
+								TOPDATABASE=MSSQL
+								TOPSERVER=localhost
+								TOPALIAS=protheus_fluig
+								TOPPORT=7890
+
+								[Drivers]
+								Active=tcp_REST
+
+								[tcp_REST]
+								TYPE=TCPIP
+								Port=1235
+
+
+								[Service]
+								Name=TOTVS-Appserver12_REST
+								DisplayName=TOTVS | Appserver 12
+
+								[GENTCPIP]
+								Enable=0
+
+								[LICENSECLIENT]
+								SERVER=10.171.67.144
+								PORT=5555
+
+								[WEBAPP]
+								PORT= 8099
+
+								[TDS]
+								ALLOWEDIT=*
+								ALLOWAPPLYPATCH=* 
+
+								[HTTPV11]
+								Enable=1
+								Sockets=HTTPREST
+								TimeOut=120 
+								AddressFamily=1
+
+								[HTTPREST]
+								Port=8082
+								URIs=HTTPURI
+								SECURITY=0
+
+								[HTTPURI]
+								URL=/rest
+								PrepareIn=All
+								Instances=1,1,1,1
+
+								[RESTJOB]
+								MAIN=HTTP_START
+								ENVIRONMENT=environment
+
+								[ONSTART]
+								jobs=RESTJOB
+								RefreshRate=120 
+
+
+								[GENERAL]
+								MAXSTRINGSIZE=10
+
+							</code></pre>
+
+							<p style="font-size:26px">appserver.ini</p>
+				</section>
+
+
+				<section>
+						<h2> Consumindo <span style="color:blueviolet">serviços</span></h2>
+
+						<div class="menu">
+								<ul style="display: inline-flex;list-style-type:none">
+									<li style="font-size:18px; margin-right: 50px">
+										<h3>POSTMAN</h3>
+									
+									</li>
+									<li style="font-size:18px; margin-right: 50px">
+										<h3>SOAP UI</h3>
+									</li>
+									<li style="font-size:18px; margin-right: 50px">
+										<h3>FLUIG</h3>
+									</li>
+									</ul>
+							</div>
+						
+				</section>
+
+
+				<section>
+					<h3>Trabalhando com <span style="color:blueviolet">DATASETS</span></h3>
+				</section>
+
+				<section>
+						<h4>Criando Dataset</h4>
+						<pre style="box-shadow:none"><code class="js hljs" data-trim contenteditable>
+
+								function defineStructure() {
+
+								}
+								function onSync(lastSyncDate) {
+								
+								}
+								function createDataset(fields, constraints, sortFields) {
+									var dataset = DatasetBuilder.newDataset();
+									
+									dataset.addColumn("Nome");
+									dateset.addColumn("Email");
+									dataset.addColumn("CPF");
+									
+									dataset.addRow(new Array("Rodrigo",'rodrigo.more@totvs.com.br','50069056879'));
+									dataset.addRow(new Array("Peter",'peter.tapia@totvs.com.br','0000343099'));
+									dataset.addRow(new Array("Paula",'paula.lopes@totvs.com.br','6565980865'));
+								
+								
+									return dataset;
+								
+								}function onMobileSync(user) {
+								
+								}
+							</code>
+						</pre>
+				</section>
+
+				<section>
+						<h4>Trabalhando com constraints</h4>
+						<pre style="box-shadow:none"><code class="js hljs" data-trim contenteditable>
+
+									var c1 = DatasetFactory.createConstraint("CPF", "50069056879", "50069056879", ConstraintType.MUST_NOT);
+									var c2 = DatasetFactory.createConstraint("Email","rodrigo.more@totvs.com.br", "%rodrigo.more@totvs.com.br%", ConstraintType.MUST_NOT);
+									var constraints   = new Array(c1, c2);
+	
+    					//Busca o dataset
+									var dataset = DatasetFactory.getDataset("ds_pessoas", null, constraints, sortingFields);
+								
+								
+							</code>
+						</pre>
+				</section>
+
+
+				<section>
+					<h1>THE END</h1>
+						<h5>Obrigado!</h5>
+				</section>
+
+			</section>
+
+				
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>
